@@ -1,4 +1,4 @@
-# Ren-View
+# Ren-Viewer
 
 Local Ren'Py resource studio. Open a game folder, browse the unified virtual filesystem (archives + loose files, engine load order), decompile scripts, walk the story graph, inspect characters and CGs, and export a patch overlay.
 
