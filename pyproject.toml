@@ -1,0 +1,34 @@
+[project]
+name = "ren-viewer"
+version = "1.0.0"
+description = "Local Ren'Py resource studio — view, explore, and patch visual novels."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Experiences" }]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.9.0",
+    "pillow>=10.4.0",
+    "python-multipart>=0.0.12",
+]
+
+[project.optional-dependencies]
+decompile = ["unrpyc"]
+
+[project.scripts]
+ren-viewer = "ren_viewer.cli:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{ include = "ren_viewer", from = "src" }]
+
+[tool.poetry.dependencies]
+unrpyc = { git = "https://github.com/CensoredUsername/unrpyc.git", tag = "v2.0.3", optional = true }
+
+[tool.poetry.group.dev.dependencies]
+httpx = ">=0.27.0"
